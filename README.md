@@ -23,13 +23,13 @@ Inorder to include any needed control in your app, you have to follow these step
 
 1- Add a script tag where the `src` attribut points to the script of the desired control:
 
-``html
+``` html
 <script src="path/to/control.js"/>
 
 example: (Alert control)
 
 <script src="bower_components/majestic-waffle/dist/Alert/Alert.js"/>
 
-``
+```
 
 2- If you want to use 

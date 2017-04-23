@@ -1,0 +1,37 @@
+@import "../assets/styles/settings";
+
+#summery-repeater {
+  .summery-item{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin: 0 0 5px;
+
+    label.name{
+      text-transform: capitalize;
+    }
+    p.value {
+      margin: 0 10px;
+    }
+    button.edit-entry{
+      background: transparent;
+      width: 40px;
+      height: 40px;
+      color: rgb(255, 255, 255);
+      font-size: 14px;
+      border: 0;
+
+      span{
+        font-family: $font-family-Segoe;
+      }
+
+      &:hover{
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      &:active {
+        background: rgba(255, 255, 255, 0.2);
+      }  
+    }
+  }
+}

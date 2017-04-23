@@ -1,0 +1,12 @@
+include ../includes/main-components
+
+- componentName = "FormEntriesSummery";
+
++main
+
+  div#summery-repeater(data-win-control="WinJS.UI.Repeater")
+    div.summery-item
+      label.win-type-base.name(data-win-bind="textContent: key._name")
+      p.value(data-win-bind="textContent: key._value")
+      button.edit-entry(data-win-bind="onclick: callback")
+        span &#xE104;

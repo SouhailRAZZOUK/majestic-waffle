@@ -1,0 +1,22 @@
+@import "../assets/styles/settings";
+
+.entry{
+  .form-hint {
+    display: block;
+    font-size: 11px;
+    margin: 2px 0px;
+    color: $place-holder-color;
+  }
+
+  .has-error{
+    &, input, select {
+      border-color: $danger-color;      
+    } 
+  }
+
+  .error-message {
+    color: $danger-color;
+    font-size: 12px;
+    margin: .5em 0;
+  }
+}

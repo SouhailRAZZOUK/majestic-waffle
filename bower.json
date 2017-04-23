@@ -1,0 +1,29 @@
+{
+  "name": "majestic-waffle",
+  "description": "A set of controls made for WinJS applications",
+  "main": "index.js",
+  "authors": [
+    "souhail.razzouk@hotmail.com"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "es6",
+    "globals"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bin/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "winjs": "^4.4.0",
+    "outdated-browser": "^1.1.3",
+    "validate": "validate.js#^0.11.1",
+    "moment": "^2.17.1",
+    "markdown": "^0.5.0"
+  }
+}

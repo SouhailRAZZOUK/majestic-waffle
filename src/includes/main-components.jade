@@ -1,0 +1,23 @@
+- var componentName = "";
+- var modules = [];
+
+mixin main
+
+  doctype html
+  
+  html
+    head
+      title
+      link(rel="stylesheet", href="#{componentName}.css")
+      
+      - for(var mod of modules)
+        script(src="modules/#{mod}.js")
+        
+      script(src="#{componentName}.js")
+
+    body
+    
+      if block
+        block
+
+      

@@ -20,5 +20,5 @@ class LoadingRing {
   }
 }
 
-WinJS.Namespace.define("NightlyTrex.UI", { LoadingRing: LoadingRing });
-WinJS.Utilities.markSupportedForProcessing(NightlyTrex.UI.LoadingRing);
+WinJS.Namespace.define("MajesticWaffle.UI", { LoadingRing: LoadingRing });
+WinJS.Utilities.markSupportedForProcessing(MajesticWaffle.UI.LoadingRing);

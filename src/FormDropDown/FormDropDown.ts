@@ -78,5 +78,5 @@ class FormDropDown {
 
 }
 
-WinJS.Namespace.define("NightlyTrex.UI", { FormDropDown: FormDropDown });
-WinJS.Utilities.markSupportedForProcessing(NightlyTrex.UI.FormDropDown);
+WinJS.Namespace.define("MajesticWaffle.UI", { FormDropDown: FormDropDown });
+WinJS.Utilities.markSupportedForProcessing(MajesticWaffle.UI.FormDropDown);

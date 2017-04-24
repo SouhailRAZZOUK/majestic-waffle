@@ -60,5 +60,5 @@ class Step {
 
 }
 
-WinJS.Namespace.define("NightlyTrex.UI", { Step: Step });
-WinJS.Utilities.markSupportedForProcessing(NightlyTrex.UI.Step);
+WinJS.Namespace.define("MajesticWaffle.UI", { Step: Step });
+WinJS.Utilities.markSupportedForProcessing(MajesticWaffle.UI.Step);

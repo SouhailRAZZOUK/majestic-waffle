@@ -11,8 +11,8 @@ class MarkdownViewer {
     this._element = element;
     this._url = options.url || "";
     this._markdownContent = options.markdown || "";
-    
-    WinJS.Utilities.addClass(this._element, "article-body")
+
+    WinJS.Utilities.addClass(this._element, "article-body");
 
     if (this._url) {
       fileXHR = WinJS.xhr({
@@ -39,7 +39,7 @@ class MarkdownViewer {
   public setContent(md: any) {
     this._HTMLContent = markdown.toHTML(md);
     this._viewer.innerHTML = this._HTMLContent;
-    this.show();    
+    this.show();
   }
 
   public show(): WinJS.IPromise<any> {
@@ -51,5 +51,5 @@ class MarkdownViewer {
   }
 }
 
-WinJS.Namespace.define("NightlyTrex.UI", { MarkdownViewer: MarkdownViewer });
-WinJS.Utilities.markSupportedForProcessing(NightlyTrex.UI.MarkdownViewer);
+WinJS.Namespace.define("MajesticWaffle.UI", { MarkdownViewer: MarkdownViewer });
+WinJS.Utilities.markSupportedForProcessing(MajesticWaffle.UI.MarkdownViewer);

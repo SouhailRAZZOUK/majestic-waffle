@@ -2,8 +2,8 @@
  * Alert is an Html control that displays a notification-styled closable alert box wherever declared
  * @param element HTML element to be converted to an alert
  * @param options Javascript object that contains the configuration of the Alert
- * @example var alert = new NightlyTrex.UI.Alert(element, options);
- * @example <div data-win-control="NightlyTrex.UI.Alert" data-win-options="{...}">
+ * @example var alert = new MajesticWaffle.UI.Alert(element, options);
+ * @example <div data-win-control="MajesticWaffle.UI.Alert" data-win-options="{...}">
  */
 
 interface IAlertOptions extends Object {
@@ -111,5 +111,5 @@ class Alert {
   }
 }
 
-WinJS.Namespace.define("NightlyTrex.UI", { Alert: Alert });
-WinJS.Utilities.markSupportedForProcessing(NightlyTrex.UI.Alert);
+WinJS.Namespace.define("MajesticWaffle.UI", { Alert: Alert });
+WinJS.Utilities.markSupportedForProcessing(MajesticWaffle.UI.Alert);

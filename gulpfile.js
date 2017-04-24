@@ -50,7 +50,7 @@ gulp.task('js', function() {
 gulp.task('jade', function() {
 return gulp.src(['src/**/*.jade', '!src/includes/**/*',])
     .pipe( jade({ pretty: true }))
-    .pipe( gulp.dest('bin/'))
+    .pipe( gulp.dest('dist/'))
     .pipe( connect.reload() );
 });
 

@@ -6,9 +6,9 @@ interface IStepsAssistantOptions extends Object {
 
 class StepsAssistant {
   private _element: HTMLElement;
-  private _steps: Array<NightlyTrex.UI.Step>;
+  private _steps: Array<MajesticWaffle.UI.Step>;
   private _progressElement: HTMLElement;
-  private _currentStep: NightlyTrex.UI.Step;
+  private _currentStep: MajesticWaffle.UI.Step;
   private _nextCommand: HTMLElement;
   private _finalCommands: Array<HTMLElement>;
   private _eventsHandlers: Array<Object>;
@@ -94,7 +94,7 @@ class StepsAssistant {
 
   public generateSteps(stepsElements?: Array<HTMLElement>): void {
     let elements = stepsElements || Array.from(WinJS.Utilities.query(".step", this._element));
-    this._steps = elements.map((elem: HTMLElement) => new NightlyTrex.UI.Step(elem, {}));
+    this._steps = elements.map((elem: HTMLElement) => new MajesticWaffle.UI.Step(elem, {}));
   }
 
   public createFinalCommands(): Array<HTMLElement> {
@@ -199,7 +199,7 @@ class StepsAssistant {
     const error = () => {
       for (let command of self._finalCommands) command.removeAttribute("disabled");
       self._progressElement.winControl.hide();
-    }
+    };
     let submitPromise = function (complete: Function, error: Function, progress: Function) {
       self.onsubmit();
     };
@@ -210,5 +210,5 @@ class StepsAssistant {
 
 }
 
-WinJS.Namespace.define("NightlyTrex.UI", { StepsAssistant: StepsAssistant });
-WinJS.Utilities.markSupportedForProcessing(NightlyTrex.UI.StepsAssistant);
+WinJS.Namespace.define("MajesticWaffle.UI", { StepsAssistant: StepsAssistant });
+WinJS.Utilities.markSupportedForProcessing(MajesticWaffle.UI.StepsAssistant);

@@ -20,5 +20,5 @@ class FlyingDots {
   }
 }
 
-WinJS.Namespace.define("NightlyTrex.UI", { FlyingDots: FlyingDots });
-WinJS.Utilities.markSupportedForProcessing(NightlyTrex.UI.FlyingDots);
+WinJS.Namespace.define("MajesticWaffle.UI", { FlyingDots: FlyingDots });
+WinJS.Utilities.markSupportedForProcessing(MajesticWaffle.UI.FlyingDots);

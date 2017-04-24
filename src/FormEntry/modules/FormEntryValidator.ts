@@ -13,13 +13,13 @@ declare interface IFormEntryValidation extends Object {
 }
 
 class FormEntryValidator {
-  private _entry: NightlyTrex.UI.FormEntry;
+  private _entry: MajesticWaffle.UI.FormEntry;
   private _constraints: any;
   private _validation: Object;
   private _errors: Array<string>;
   private _confirmErrors: Array<string>;
 
-  constructor(entry: NightlyTrex.UI.FormEntry, validation: IFormEntryValidation, constraints: Object, checkpoint?: string) {
+  constructor(entry: MajesticWaffle.UI.FormEntry, validation: IFormEntryValidation, constraints: Object, checkpoint?: string) {
     this._entry = entry;
     this._constraints = constraints;
     this._validation = validation;
@@ -55,7 +55,7 @@ class FormEntryValidator {
       let errorElement = document.createElement("p");
       WinJS.Utilities.addClass(errorElement, "error-message");
       error = (this._constraints.date) ? error : `${this._entry.name} ${error}`;
-      errorElement.innerText = NightlyTrex.Utilities.capitalize(error);
+      errorElement.innerText = MajesticWaffle.Utilities.capitalize(error);
       this._entry.validationMessages.appendChild(errorElement);
     }
   }
@@ -84,7 +84,7 @@ class FormEntryValidator {
     for (let error of errors) {
       let errorElement = document.createElement("p");
       WinJS.Utilities.addClass(errorElement, "error-message");
-      errorElement.innerText = NightlyTrex.Utilities.capitalize(error);
+      errorElement.innerText = MajesticWaffle.Utilities.capitalize(error);
       this._entry.confirmValidationMessages.appendChild(errorElement);
     }
   }
@@ -111,5 +111,5 @@ class FormEntryValidator {
   }
 }
 
-WinJS.Namespace.define("NightlyTrex.UI", { FormEntryValidator: FormEntryValidator });
-WinJS.Utilities.markSupportedForProcessing(NightlyTrex.UI.FormEntryValidator);
+WinJS.Namespace.define("MajesticWaffle.UI", { FormEntryValidator: FormEntryValidator });
+WinJS.Utilities.markSupportedForProcessing(MajesticWaffle.UI.FormEntryValidator);

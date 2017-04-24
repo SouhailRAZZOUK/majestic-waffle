@@ -50,7 +50,7 @@ class FormInput {
   public generateLabel(labelText: string): HTMLLabelElement {
     let labelElement = document.createElement("label");
     WinJS.Utilities.addClass(labelElement, "win-type-base");
-    labelElement.innerText = NightlyTrex.Utilities.capitalize(NightlyTrex.Utilities.prettify(labelText));
+    labelElement.innerText = MajesticWaffle.Utilities.capitalize(MajesticWaffle.Utilities.prettify(labelText));
     return labelElement;
   }
 
@@ -87,11 +87,11 @@ class FormInput {
         }
       },
       {
-        case: "NightlyTrex.UI.FormDropDown",
+        case: "MajesticWaffle.UI.FormDropDown",
         callback: (): void => {
           if (this._isConfirm) return; // Can not be confirmed
           element = document.createElement("div");
-          control = new NightlyTrex.UI.FormDropDown(element, self._dataOptions);
+          control = new MajesticWaffle.UI.FormDropDown(element, self._dataOptions);
         }
       },
       {
@@ -112,7 +112,7 @@ class FormInput {
       }
     ];
 
-    NightlyTrex.Utilities.switchcase(inputType, cases);
+    MajesticWaffle.Utilities.switchcase(inputType, cases);
 
     return element;
 
@@ -129,7 +129,7 @@ class FormInput {
         }
       },
       {
-        case: "NightlyTrex.UI.FormDropDown",
+        case: "MajesticWaffle.UI.FormDropDown",
         callback: () => self._element.winControl.value
       },
       {
@@ -138,7 +138,7 @@ class FormInput {
       }
     ];
     const onchange = () => {
-      self._value = NightlyTrex.Utilities.switchcase(self._type, cases);
+      self._value = MajesticWaffle.Utilities.switchcase(self._type, cases);
       self.onchange();
     };
 
@@ -147,5 +147,5 @@ class FormInput {
 
 }
 
-WinJS.Namespace.define("NightlyTrex.UI", { FormInput: FormInput });
-WinJS.Utilities.markSupportedForProcessing(NightlyTrex.UI.FormInput);
+WinJS.Namespace.define("MajesticWaffle.UI", { FormInput: FormInput });
+WinJS.Utilities.markSupportedForProcessing(MajesticWaffle.UI.FormInput);

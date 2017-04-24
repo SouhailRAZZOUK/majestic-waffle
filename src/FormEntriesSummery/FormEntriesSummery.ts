@@ -1,6 +1,6 @@
 class FormEntriesSummery {
   private _element: HTMLElement;
-  private _entries: Array<NightlyTrex.UI.FormEntry>;
+  private _entries: Array<MajesticWaffle.UI.FormEntry>;
   private _callbacks: any;
   private _repeater: WinJS.UI.Repeater;
   private _summeryElement: HTMLElement;
@@ -22,24 +22,24 @@ class FormEntriesSummery {
     });
   }
 
-  public set entries(entries: Array<NightlyTrex.UI.FormEntry>) {
+  public set entries(entries: Array<MajesticWaffle.UI.FormEntry>) {
     this._entries = entries;
     this.updateData();
   }
 
-  public set callbacks(callbacks: Array<NightlyTrex.UI.FormEntry>) {
+  public set callbacks(callbacks: Array<MajesticWaffle.UI.FormEntry>) {
     this._callbacks = callbacks;
     this.updateData();
   }
 
   public updateData() {
     let self = this;
-    this._repeater.data = new WinJS.Binding.List(self._entries.map((v: NightlyTrex.UI.FormEntry): any => {
+    this._repeater.data = new WinJS.Binding.List(self._entries.map((v: MajesticWaffle.UI.FormEntry): any => {
       WinJS.Utilities.markSupportedForProcessing(self._callbacks[v.name]);
       return { key: v, callback: self._callbacks[v.name] };
     }));
   }
 }
 
-WinJS.Namespace.define("NightlyTrex.UI", { FormEntriesSummery: FormEntriesSummery });
-WinJS.Utilities.markSupportedForProcessing(NightlyTrex.UI.FormEntriesSummery);
+WinJS.Namespace.define("MajesticWaffle.UI", { FormEntriesSummery: FormEntriesSummery });
+WinJS.Utilities.markSupportedForProcessing(MajesticWaffle.UI.FormEntriesSummery);

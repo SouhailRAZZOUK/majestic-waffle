@@ -14,20 +14,20 @@ class FormEntry {
   private _element: HTMLElement;
   private _label: HTMLLabelElement;
   private _name: string;
-  private _input: NightlyTrex.UI.FormInput;
+  private _input: MajesticWaffle.UI.FormInput;
   private _type: string;
   private _hint: string;
-  private _confirm: NightlyTrex.UI.FormInput;
+  private _confirm: MajesticWaffle.UI.FormInput;
   private _validation: IFormEntryValidation;
   public validationMessages: HTMLElement;
   public confirmValidationMessages: HTMLElement;
-  private _validator: NightlyTrex.UI.FormEntryValidator;
+  private _validator: MajesticWaffle.UI.FormEntryValidator;
   private _constraints: Object;
   private _value: string;
 
   constructor(element: HTMLElement, options: IFormEntryOptions) {
     let self = this;
-    let noConfirmInputTypes = ["select", "WinJS.UI.DatePicker", "WinJS.UI.TimePicker", "NightlyTrex.UI.FormDropDown"];
+    let noConfirmInputTypes = ["select", "WinJS.UI.DatePicker", "WinJS.UI.TimePicker", "MajesticWaffle.UI.FormDropDown"];
     this._element = element;
     this._name = options["name"];
     this._type = options["type"];
@@ -35,7 +35,7 @@ class FormEntry {
     this._validation = options["validation"];
     this._element.setAttribute("id", `${options["name"]}-entry`);
     WinJS.UI.Fragments.render("/controls/FormEntry/FormEntry.html", this._element).done(function () {
-      self._input = new NightlyTrex.UI.FormInput(self._type, {
+      self._input = new MajesticWaffle.UI.FormInput(self._type, {
         dataOptions: options["dataOptions"] || {},
         name: self._name,
         hint: self._hint,
@@ -43,8 +43,8 @@ class FormEntry {
         isConfirm: false
       });
 
-      if (options["confirm"] && !NightlyTrex.Utilities.exists(self._type, noConfirmInputTypes))
-        self._confirm = new NightlyTrex.UI.FormInput(self._type, {
+      if (options["confirm"] && !MajesticWaffle.Utilities.exists(self._type, noConfirmInputTypes))
+        self._confirm = new MajesticWaffle.UI.FormInput(self._type, {
           name: `confirm-${self._name}`,
           hint: `Re-enter the ${self._name}`,
           required: true,
@@ -53,7 +53,7 @@ class FormEntry {
 
       if (self._validation) {
         self._constraints = options["constraints"];
-        self._validator = new NightlyTrex.UI.FormEntryValidator(self, self._validation, self._constraints);
+        self._validator = new MajesticWaffle.UI.FormEntryValidator(self, self._validation, self._constraints);
       }
 
       self._wireupEvents();
@@ -66,7 +66,7 @@ class FormEntry {
     return this._element;
   }
 
-  public get input(): NightlyTrex.UI.FormInput {
+  public get input(): MajesticWaffle.UI.FormInput {
     return this._input;
   }
 
@@ -74,7 +74,7 @@ class FormEntry {
     return this._name;
   }
 
-  public get confirm(): NightlyTrex.UI.FormInput {
+  public get confirm(): MajesticWaffle.UI.FormInput {
     return this._confirm;
   }
 
@@ -82,7 +82,7 @@ class FormEntry {
     return this._value;
   }
 
-  public get validator(): NightlyTrex.UI.FormEntryValidator {
+  public get validator(): MajesticWaffle.UI.FormEntryValidator {
     return this._validator;
   }
 
@@ -145,5 +145,5 @@ class FormEntry {
 
 }
 
-WinJS.Namespace.define("NightlyTrex.UI", { FormEntry: FormEntry });
-WinJS.Utilities.markSupportedForProcessing(NightlyTrex.UI.FormEntry);
+WinJS.Namespace.define("MajesticWaffle.UI", { FormEntry: FormEntry });
+WinJS.Utilities.markSupportedForProcessing(MajesticWaffle.UI.FormEntry);

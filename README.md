@@ -21,7 +21,7 @@ Head over to WinJS Git Repo to get informations about how to use WinJS in your a
 
 Inorder to include any needed control in your app, you have to follow these steps
 
-1- Add a script tag where the `src` attribut points to the script of the desired control:
+1. Add a script tag where the `src` attribut points to the script of the desired control:
 
 ``` html
 <script src="path/to/control.js"/>
@@ -32,7 +32,7 @@ example: (Alert control)
 
 ```
 
-2- Call the desired control in your app:
+2. Call the desired control in your app:
 
   - Declarative : 
   
@@ -62,6 +62,6 @@ example: (Alert control)
 
 `element` is the HTML element where you want to display the control, and `options` is the initialization options object, you can get more details about `options` [here](dist/Alert/Alert.js)
 
-    Note: Some controls have more dependencies then their own script, you may need to include the `Utilities.js` or ``Navigation.js` script or both of them.
+> **Note:** _Some controls have more dependencies then their own script, you may need to include the `Utilities.js` or `Navigation.js` script or both of them._
 
 ## 

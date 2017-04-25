@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "typeRoots" : ["node_modules/@types", "dist"],
+    "typeRoots" : ["node_modules/@types", "dist/"],
     "types": [
-      "winjs",
-      "declarations"
+      "winjs"
     ],
     "target": "ES6",
     "rootDir": "./",
@@ -13,8 +12,5 @@
     "sourceMap": true,
     "declaration": true,
     "outDir": "dist/"
-  },
-  "include": [
-    "./src/**/*.ts"
-  ]
+  }
 }

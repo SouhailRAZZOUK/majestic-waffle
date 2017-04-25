@@ -28,8 +28,8 @@ class Alert {
   constructor(element: HTMLElement, options?: IAlertOptions) {
     let self = this;
     let textElement: HTMLElement = document.createElement("p");
-    let typePrefix: string = "alert alert-";
-    let stack: HTMLElement = document.getElementById("alerts-stack");
+    let typePrefix: string = "mw-alert mw-alert-";
+    let stack: HTMLElement = document.getElementById("mw-alerts-stack");
 
     WinJS.Utilities.addClass(textElement, "text");
 

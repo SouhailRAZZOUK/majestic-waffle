@@ -116,15 +116,15 @@
 	vertical-align: bottom;
 	margin-left: 5px
 }
-div.c_loadingDots.c_dotsPlaying {
+.c_loadingDots.c_dotsPlaying {
 	visibility: visible
 }
-div.c_loadingDots div.c_loadingDot {
+.c_loadingDots .c_loadingDot {
 	position: absolute;
 	left: 0;
 	bottom: 0
 }
-div.c_loadingDots div.c_loadingFallback {
+.c_loadingDots .c_loadingFallback {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -147,43 +147,43 @@ div.c_loadingDots div.c_loadingFallback {
 	z-index: 10000;
 	width: 100%
 }
-div.c_flyingDots {
+.c_flyingDots {
 	width: 100%;
 	height: 10px;
 	font-size: 0;
 	overflow: hidden
 }
-div.c_flyingDots div.c_loadingTracks {
+.c_flyingDots .c_loadingTracks {
 	position: absolute;
 	left: -10%;
 	top: 0;
 	right: -15%;
 	bottom: 0
 }
-div.c_flyingDots div.c_loadingTrack {
+.c_flyingDots .c_loadingTrack {
 	position: absolute;
 	left: 0;
 	top: 0;
 	right: 0;
 	height: 4px
 }
-div.c_flyingDots div.c_loadingDot {
+.c_flyingDots .c_loadingDot {
 	width: 4px;
 	height: 4px;
 	border-radius: 3px;
 	background-color: #fff
 }
-div.c_flyingDots.c_dotsPlaying div.c_loadingDot {
+.c_flyingDots.c_dotsPlaying .c_loadingDot {
 	-webkit-animation: makedotfly 3.3s linear 0s infinite normal;
 	-moz-animation: makedotfly 3.3s linear .1s infinite normal;
 	-ms-animation: makedotfly 3.3s linear 0s infinite normal;
 	animation: makedotfly 3.3s linear 0s infinite normal
 }
-div.c_flyingDots div.c_loadingTrack0 {
+.c_flyingDots .c_loadingTrack0 {
 	left: -18%;
 	margin-left: 90px
 }
-div.c_flyingDots div.c_loadingTrack0 div.c_loadingDot {
+.c_flyingDots .c_loadingTrack0 .c_loadingDot {
 	-moz-animation-delay: .15s;
 	-ms-animation-delay: .15s;
 	-o-animation-delay: .15s;
@@ -192,56 +192,56 @@ div.c_flyingDots div.c_loadingTrack0 div.c_loadingDot {
 	opacity: 0;
 	filter: alpha(opacity=0)
 }
-div.c_flyingDots div.c_loadingTrack1 {
+.c_flyingDots .c_loadingTrack1 {
 	left: -15%;
 	margin-left: 75px
 }
-div.c_flyingDots div.c_loadingTrack1 div.c_loadingDot {
+.c_flyingDots .c_loadingTrack1 .c_loadingDot {
 	-moz-animation-delay: .3s;
 	-ms-animation-delay: .3s;
 	-webkit-animation-delay: .3s;
 	animation-delay: .3s
 }
-div.c_flyingDots div.c_loadingTrack2 {
+.c_flyingDots .c_loadingTrack2 {
 	left: -12%;
 	margin-left: 60px
 }
-div.c_flyingDots div.c_loadingTrack2 div.c_loadingDot {
+.c_flyingDots .c_loadingTrack2 .c_loadingDot {
 	-moz-animation-delay: .45s;
 	-ms-animation-delay: .45s;
 	-webkit-animation-delay: .45s;
 	animation-delay: .45s
 }
-div.c_flyingDots div.c_loadingTrack3 {
+.c_flyingDots .c_loadingTrack3 {
 	left: -9%;
 	margin-left: 45px
 }
-div.c_flyingDots div.c_loadingTrack3 div.c_loadingDot {
+.c_flyingDots .c_loadingTrack3 .c_loadingDot {
 	-moz-animation-delay: .6s;
 	-ms-animation-delay: .6s;
 	-webkit-animation-delay: .6s;
 	animation-delay: .6s
 }
-div.c_flyingDots div.c_loadingTrack4 {
+.c_flyingDots .c_loadingTrack4 {
 	left: -6%;
 	margin-left: 30px
 }
-div.c_flyingDots div.c_loadingTrack4 div.c_loadingDot {
+.c_flyingDots .c_loadingTrack4 .c_loadingDot {
 	-moz-animation-delay: .75s;
 	-ms-animation-delay: .75s;
 	-webkit-animation-delay: .75s;
 	animation-delay: .75s
 }
-div.c_flyingDots div.c_loadingTrack5 {
+.c_flyingDots .c_loadingTrack5 {
 	left: -3%;
 	margin-left: 15px
 }
-div.c_flyingDots div.c_loadingTrack5 div.c_loadingDot {
+.c_flyingDots .c_loadingTrack5 .c_loadingDot {
 	-moz-animation-delay: .9s;
 	-ms-animation-delay: .9s;
 	-webkit-animation-delay: .9s;
 	animation-delay: .9s
 }
-div.c_flyingDots div.c_loadingFallback {
+.c_flyingDots .c_loadingFallback {
 	height: 4px
 }

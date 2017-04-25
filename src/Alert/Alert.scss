@@ -1,6 +1,6 @@
-@import "../assets/styles/settings";
+@import "../includes/styles/settings";
 
-.alert {
+.mw-alert {
   position: relative;
   border: none;
   padding: 12px 15px;
@@ -46,20 +46,20 @@
     width: calc(100% - 48px);
   }
     
-  &.alert-success {
+  &.mw-alert-success {
     background-color: $success-color;
   }
   
-  &.alert-info {
+  &.mw-alert-info {
     background-color: $info-color;
     color: #000000; 
   }
 
-  &.alert-warning {
+  &.mw-alert-warning {
     background-color: $warning-color;
   }
   
-  &.alert-danger {
+  &.mw-alert-danger {
     background-color: $danger-color;
   }
 }

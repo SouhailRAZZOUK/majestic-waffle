@@ -1,0 +1,20 @@
+@mixin centered-block($width: 100%, $height: auto) {
+  
+  display: block;
+  width: $width;
+  height: $height;
+  position: relative;
+
+  @if($height != auto){
+    $offset-top: $height /2 ;
+    top: calc(50% - #{$offset-top});
+  }
+  
+  @if($width != 100%) {
+    $offset-left: $width /2 ;  
+    left: calc(50% - #{$offset-left});
+  }@else {
+    text-align: center;
+  }
+  
+}

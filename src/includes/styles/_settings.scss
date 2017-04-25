@@ -1,0 +1,54 @@
+$main-color: rgb(29,29,29);
+$place-holder-color: rgb(144, 144, 144);
+$success-color: rgb(33, 213, 74);
+$warning-color: rgb(255, 155, 0);
+$danger-color: rgb(255, 18, 0);
+$info-color: rgb(0, 122, 204);
+$font-family-Cooper-Std: "Cooper Std";
+$font-family-Segoe: "Segoe UI", sans-serif, "Segoe MDL2 Assets", "Symbols";
+
+// Media Queries
+
+//small devices:
+
+$small-devices-min-width: 0px;
+$small-devices-max-width: 400px;
+$small-devices-min-height: 0px;
+$small-devices-max-height: 300px;
+
+$small-devices-and-up : "(min-width: #{$small-devices-min-width})"; 
+$small-devices-portrait: "(min-width: #{$small-devices-min-width}) and (max-width: #{$small-devices-max-width}) and (orientation: portrait)"; 
+$small-devices-landscape: "(min-height: #{$small-devices-min-height}) and (max-height: #{$small-devices-max-height}) and (orientation: landscape)";
+
+// medium devices:
+
+$medium-devices-min-width: 401px;
+$medium-devices-max-width: 750px;
+$medium-devices-min-height: 301px;
+$medium-devices-max-height: 500px;
+
+$medium-devices-and-up: "(min-width: #{$medium-devices-min-width})";
+$medium-devices-portrait: "(min-width: #{$medium-devices-min-width}) and (max-width: #{$medium-devices-max-width}) and (orientation: portrait)"; 
+$medium-devices-landscape: "(min-height: #{$medium-devices-min-height}) and (max-height: #{$medium-devices-max-height}) and (orientation: landscape)";
+
+// large devices:
+
+$large-devices-min-width: 751px;
+$large-devices-max-width: 1000px;
+$large-devices-min-height: 501px;
+$large-devices-max-height: 700px;
+
+$large-devices-and-up: "(min-width: #{$large-devices-min-width})";
+$large-devices-portrait: "(min-width: #{$large-devices-min-width}) and (max-width: #{$large-devices-max-width}) and (orientation: portrait)"; 
+$large-devices-landscape: "(min-height: #{$large-devices-min-height}) and (max-height: #{$large-devices-max-height}) and (orientation: landscape)";
+
+// extra-large devices
+
+$extra-large-devices-min-width: 1001px;
+$extra-large-devices-max-width: 2000px;
+$extra-large-devices-min-height: 701px;
+$extra-large-devices-max-height: 1024px;
+
+$extra-large-devices-and-up: "(min-width: #{$extra-large-devices-min-width})";
+$extra-large-devices-portrait: "(min-width: #{$extra-large-devices-min-width}) and (max-width: #{$extra-large-devices-max-width}) and (orientation: portrait)"; 
+$extra-large-devices-landscape: "(min-height: #{$extra-large-devices-min-height}) and (max-height: #{$extra-large-devices-max-height}) and (orientation: landscape)";

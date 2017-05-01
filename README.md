@@ -2,11 +2,19 @@
 
 A set of controls and tools made for WinJS applications, it contains a lot of controls, that can be used in a declarative way or via code, the same way as of WinJS UI controls, and a set of tools that I find interesting, and helped me accomplish the tools
 
-## Requirements
+## Requirements & Dependencies
 
 To use these controls you will have to install WinJS in your project, and all WinJS scripts have to be called before calling any control of Majestic Waffle.
 
-Head over to WinJS Git Repo to get informations about how to use WinJS in your app [here]()
+Head over to WinJS Git Repo to get informations about how to use WinJS in your app [here](https://github.com/winjs/winjs)
+
+Some of Majestic Waffle controls depends on these libraries in order to run correctly:
+
+- [Moment.js](https://github.com/moment/moment)
+- [Validate.js](https://github.com/ansman/validate.js)
+- [Markdown-js](http://github.com/evilstreak/markdown-js)
+
+Please make sure you called them before calling any control that depends on any of them. Specific versions of dependencies can be found in [`bower.json`](/bower.json)
 
 ## Installation
 
@@ -19,7 +27,7 @@ Head over to WinJS Git Repo to get informations about how to use WinJS in your a
 
 ## Usage
 
-Inorder to include any needed control in your app, you have to follow these steps
+Inorder to include any needed control in your app, you have to follow these steps after calling WinJS in your app.
 
 1. Add a script tag where the `src` attribut points to the script of the desired control:
 
@@ -34,7 +42,7 @@ example: (Alert control)
 
 2. Call the desired control in your app:
 
-  - Declarative : 
+  - Declarative: 
   
   ```html
 
@@ -46,7 +54,7 @@ example: (Alert control)
   
   ```
 
-  - Via code (Javascript)
+  - Via code (Javascript):
 
   ```javascript
   
@@ -60,8 +68,24 @@ example: (Alert control)
 
   ```
 
-`element` is the HTML element where you want to display the control, and `options` is the initialization options object, you can get more details about `options` [here](dist/Alert/Alert.js)
+`element` is the HTML element where you want to display the control, and `options` is the initialization options object, you can get more details about `options` [here](/wiki/#options)
 
 > **Note:** _Some controls have more dependencies then their own script, you may need to include the `Utilities.js` or `Navigation.js` script or both of them._
 
-## 
+## Documentation
+
+You can find more documentation and API in details in the [Wiki section](/wiki).
+
+## Issues Reporting and Improvments
+
+If any control(s) or tool(s) are malfunctioning, please feel free to file an issue in the issues section, and it would be great if you mentioned the platform (OS, Browser ...) and other libraries you used so we can reproduce the issue and fix it effectively.
+
+All types of issues are welcome, including but not limited to, slow loading, glishing ... etc. We will be more than happy to fix them.
+
+Improvment suggestions are very welcome too, you can 
+
+## Contribution
+
+As usual, github fork and pull request are available, feel free to use them :D . Accepted pull requests are the ones that enclude new features(controls, tools ...) or fix any of the issues mentioned in the issues section.
+
+You can add yourself to the contributors section of [`package.json`](/package.json) too if you want to.

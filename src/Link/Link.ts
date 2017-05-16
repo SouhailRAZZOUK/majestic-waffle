@@ -1,58 +1,63 @@
-interface ILinkOptions extends Object {
-  title: string;
-  href: string;
-  scenario: NightlyTrex.Utilities.IScenario;
-}
+(function() {
 
-class Link {
+  interface ILinkOptions extends Object {
+    title: string;
+    href: string;
+    scenario: MajesticWaffle.Utilities.IScenario;
+  }
 
-  private _element: HTMLElement;
-  private _title: string;
-  private _href: string;
-  private _scenario: NightlyTrex.Utilities.IScenario;
+  class Link {
 
-  constructor(element: HTMLElement, options?: ILinkOptions) {
-    let self = this;
-    this._element = element;
-    this._title = options["title"];
-    this._scenario = options["scenario"];
-    this._href = element.getAttribute("href") || options["href"];
+    private _element: HTMLElement;
+    private _title: string;
+    private _href: string;
+    private _scenario: MajesticWaffle.Utilities.IScenario;
 
-    if (this._title) {
-      this._element.innerText = this._title;
-    }
+    constructor(element: HTMLElement, options?: ILinkOptions) {
+      let self = this;
+      this._element = element;
+      this._title = options["title"];
+      this._scenario = options["scenario"];
+      this._href = element.getAttribute("href") || options["href"];
 
-    // if there is a scenario object, href is not used
-    if (this._scenario) {
-      this._href = this._scenario.url;
-    }
-
-    this._element.addEventListener("click", function (event) {
-      event.preventDefault();
-      if (self._scenario) {
-        return NightlyTrex.Navigation.navigate(self._scenario);
+      if (this._title) {
+        this._element.innerText = this._title;
       }
-      WinJS.Navigation.navigate(self._href);
-    });
+
+      // if there is a scenario object, href is not used
+      if (this._scenario) {
+        this._href = this._scenario.url;
+      }
+
+      this._element.addEventListener("click", function (event) {
+        event.preventDefault();
+        if (self._scenario) {
+          return MajesticWaffle.Navigation.navigate(self._scenario);
+        }
+        WinJS.Navigation.navigate(self._href);
+      });
+    }
+
+    get element(): HTMLElement {
+      return this._element;
+    }
+
+    get href(): string {
+      return this._href;
+    }
+
+    get scenario(): Object {
+      return this._scenario;
+    }
+
+    dispose(): void {
+
+    }
+
   }
 
-  get element(): HTMLElement {
-    return this._element;
-  }
+  WinJS.Namespace.define("MajesticWaffle.UI", { Link: Link });
 
-  get href(): string {
-    return this._href;
-  }
+})();
 
-  get scenario(): Object {
-    return this._scenario;
-  }
-
-  dispose(): void {
-
-  }
-
-}
-
-WinJS.Namespace.define("NightlyTrex.UI", { Link: Link });
-WinJS.Utilities.markSupportedForProcessing(NightlyTrex.UI.Link);
+WinJS.Utilities.markSupportedForProcessing(MajesticWaffle.UI.Link);

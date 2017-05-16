@@ -4,14 +4,14 @@
   underage = moment().subtract(18, "years").utc();
 
   const generateUUID = (): string => {
-    var d = new Date().getTime();
+    let d = new Date().getTime();
     if (window.performance && typeof window.performance.now === "function") {
       d += performance.now();
     }
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-      var r = (d + Math.random() * 16) % 16 | 0;
+    let uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+      let r = (d + Math.random() * 16) % 16 | 0;
       d = Math.floor(d / 16);
-      return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+      return (c === "x" ? r : (r & 0x3 | 0x8)).toString(16);
     });
     return uuid;
   };
@@ -42,17 +42,17 @@
 
     return str
       // Splits keys separated by periods
-      .replace(/([^\s])\.([^\s])/g, '$1 $2')
+      .replace(/([^\s])\.([^\s])/g, "$1 $2")
       // Removes backslashes
-      .replace(/\\+/g, '')
+      .replace(/\\+/g, "")
       // Replaces - and - with space
-      .replace(/[_-]/g, ' ')
+      .replace(/[_-]/g, " ")
       // Splits camel cased words
       .replace(/([a-z])([A-Z])/g, function (m0: any, m1: any, m2: any) {
         return "" + m1 + " " + m2.toLowerCase();
       })
       .toLowerCase();
-  }
+  };
 
   const exists = (item: any, collection: Array<any>): boolean =>
     collection.find((value) => value === item) !== undefined;
@@ -91,7 +91,7 @@
     return (callback instanceof Function) ? callback(key) : callback;
   };
 
-  
+
 
   WinJS.Namespace.define("MajesticWaffle", {
     Utilities: {

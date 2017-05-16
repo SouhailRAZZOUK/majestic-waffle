@@ -9,8 +9,7 @@ var gulp        = require('gulp'),
     livereload  = require('gulp-livereload'),
     imagemin    = require('gulp-imagemin'),
     del         = require('del'),
-    merge       = require('merge2'),
-    path        = require('path');
+    merge       = require('merge2');
 
 var tsProject = typescript.createProject("./tsconfig.json");
 

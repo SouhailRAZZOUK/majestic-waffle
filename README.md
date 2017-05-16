@@ -68,13 +68,13 @@ example: (Alert control)
 
   ```
 
-`element` is the HTML element where you want to display the control, and `options` is the initialization options object, you can get more details about `options` [here](/wiki/#options)
+`element` is the HTML element where you want to display the control, and `options` is the initialization options object, you can get more details about `options` [here](https://github.com/SouhailRAZZOUK/majestic-waffle/wiki)
 
 > **Note:** _Some controls have more dependencies then their own script, you may need to include the `Utilities.js` or `Navigation.js` script or both of them._
 
 ## Documentation
 
-You can find more documentation and API in details in the [Wiki section](/wiki).
+You can find more documentation and API in details in the [Wiki section](https://github.com/SouhailRAZZOUK/majestic-waffle/wiki).
 
 ## Issues Reporting and Improvments
 

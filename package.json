@@ -26,6 +26,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": {
+    "name": "Souhail RAZZOUK",
+    "email": "souhail.razzouk@hotmail.com"
+  },
+  "contributors": [
+    
+  ],
   "license": "ISC"
 }

@@ -7,7 +7,6 @@ var gulp        = require('gulp'),
     eslint      = require('gulp-eslint'),
     tsl         = require("tslint"),
     livereload  = require('gulp-livereload'),
-    connect     = require('gulp-connect'),
     imagemin    = require('gulp-imagemin'),
     del         = require('del'),
     merge       = require('merge2'),
@@ -50,8 +49,7 @@ gulp.task('js', function() {
 gulp.task('jade', function() {
 return gulp.src(['src/**/*.jade', '!src/includes/**/*',])
     .pipe( jade({ pretty: true }))
-    .pipe( gulp.dest('dist/'))
-    .pipe( connect.reload() );
+    .pipe( gulp.dest('dist/'));
 });
 
 gulp.task('images', function() {
@@ -85,14 +83,6 @@ gulp.task('watch', function () {
 
 });
 
-gulp.task('connect', ['watch'], function() {
-	connect.server({
-		root: "bin/",
-    port: 4000,
-		livereload: true
-	});
-});
-
-gulp.task('default', ['jade','sass', 'tslint','ts', 'js','images','connect']);
+gulp.task('default', ['jade','sass', 'tslint','ts', 'js','images', 'watch']);
 
 gulp.task('build', ['jade','sass', 'tslint','ts', 'js','images']);

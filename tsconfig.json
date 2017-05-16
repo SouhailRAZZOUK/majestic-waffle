@@ -1,8 +1,12 @@
 {
   "compilerOptions": {
-    "typeRoots" : ["node_modules/@types", "dist/"],
+    "typeRoots": [
+      "node_modules/@types",
+      "./"
+    ],
     "types": [
-      "winjs"
+      "winjs",
+      "declarations"
     ],
     "target": "ES6",
     "rootDir": "./",
@@ -10,7 +14,7 @@
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "declaration": true,
+    "declaration": false,
     "outDir": "dist/"
   }
 }

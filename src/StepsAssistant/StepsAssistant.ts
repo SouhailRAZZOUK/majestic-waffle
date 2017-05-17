@@ -46,7 +46,7 @@
 
       this._wireupEvents();
 
-      WinJS.UI.Fragments.render("./StepsAssistant/StepsAssistant.html", this._element)
+      WinJS.UI.Fragments.render("StepsAssistant/StepsAssistant.html", this._element)
         .then(() => {
           self._progressElement = <HTMLElement>self._element.getElementsByClassName("progress")[0];
           WinJS.UI.process(self._progressElement);

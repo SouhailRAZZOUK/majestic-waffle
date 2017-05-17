@@ -46,7 +46,7 @@
         stack.appendChild(this._element);
       }
 
-      WinJS.UI.Fragments.render("/controls/Alert/Alert.html", this._element).done(function () {
+      WinJS.UI.Fragments.render("./Alert/Alert.html", this._element).done(function () {
         let contentElement: HTMLElement = WinJS.Utilities.query(".content", self._element)[0];
         let closeSpan: HTMLElement = document.createElement("span");
 

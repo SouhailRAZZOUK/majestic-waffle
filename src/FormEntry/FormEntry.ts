@@ -24,7 +24,7 @@
       this._hint = options["hint"];
       this._validation = options["validation"];
       this._element.setAttribute("id", `${options["name"]}-entry`);
-      WinJS.UI.Fragments.render("FormEntry/FormEntry.html", this._element).done(function () {
+      WinJS.UI.Fragments.render(MajesticWaffle.UI.controlsPath + "/FormEntry/FormEntry.html", this._element).done(function () {
         self._input = new MajesticWaffle.UI.FormInput(self._type, {
           dataOptions: options["dataOptions"] || {},
           name: self._name,

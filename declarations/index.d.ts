@@ -10,6 +10,12 @@ declare namespace MajesticWaffle {
 
   namespace UI {
 
+    /** 
+     * Contains the folder where controls are existing.
+     */
+
+    let controlsPath: string;
+
     class Alert {
       private _element;
       private _title;

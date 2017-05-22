@@ -1,11 +1,5 @@
 (function() {
 
-  interface ILinkOptions extends Object {
-    title: string;
-    href: string;
-    scenario: MajesticWaffle.Utilities.IScenario;
-  }
-
   class Link {
 
     private _element: HTMLElement;
@@ -13,7 +7,7 @@
     private _href: string;
     private _scenario: MajesticWaffle.Utilities.IScenario;
 
-    constructor(element: HTMLElement, options?: ILinkOptions) {
+    constructor(element: HTMLElement, options?: any) {
       let self = this;
       this._element = element;
       this._title = options["title"];

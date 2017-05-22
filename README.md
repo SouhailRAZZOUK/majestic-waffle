@@ -20,7 +20,7 @@ Please make sure you called them before calling any control that depends on any 
 
 | Provider | Command |
 | -------- | ------- |
-| npm | `$ npm i -S majestic-waffle` |
+<!--| npm | `$ npm i -S majestic-waffle` |-->
 | bower | `$ bower install majestic-waffle` |
 | yarn | `$ yarn add majestic-waffle` |
 | clone/download via Git | `$ git clone https://github.com/SouhailRazzouk/majestic-waffle.git` |
@@ -40,7 +40,20 @@ example: (Alert control)
 
 ```
 
-2. Call the desired control in your app:
+2. Correct the `MajesticWaffle.UI.controlsPath` variable value in the start of your app, this variable should contain the location where your controls exist:
+
+```javascript
+
+MajesticWaffle.UI.controlsPath = "/path/to/majestic-waffle";
+
+// Example:
+
+/*This is the default value, so your browser will look for your controls in bower_components folder for majestic-waffle*/
+MajesticWaffle.UI.controlsPath = "/bower_components/majestic-waffle"; 
+
+```
+
+3. Call the desired control in your app:
 
   - Declarative: 
   

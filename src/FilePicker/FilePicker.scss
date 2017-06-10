@@ -1,0 +1,79 @@
+// .mw-file-uploader {
+//   display: flex;
+//   .mw-filepath{
+//     flex: 1 1 0%;
+//   }
+//   .mw-browsebutton{
+//     flex: 0 0 auto;
+//   }
+// }
+
+.mw-filepicker {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border: 2px dashed rgba(255,255,255,.2);
+  text-align: center;
+  margin: 8px 0;
+}
+
+.mw-filepicker.hover {
+  background-color: rgba(255, 255, 255, .2);
+  border: 2px dashed rgba(255,255,255,.4);    
+}
+
+
+.mw-filepicker-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.mw-filepicker-input + label {
+  max-width: 80%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 4px 8px;
+  box-sizing: border-box;
+}
+
+.mw-filepicker-input:focus + label,
+.mw-filepicker-input.has-focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.mw-filepicker-input + label * {
+  /* pointer-events: none; */
+  /* in case of FastClick lib use */
+}
+
+.mw-filepicker-input + label svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -0.25em;
+  /* 4px */
+  margin-right: 0.25em;
+  /* 4px */
+}
+
+
+/* style 1 */
+
+// .mw-filepicker-input-1 + label {
+//     color: #f1e5e6;
+//     background-color: #d3394c;
+// }
+
+// .inputfile-1:focus + label,
+// .inputfile-1.has-focus + label,
+// .inputfile-1 + label:hover {
+//     background-color: #722040;
+// }

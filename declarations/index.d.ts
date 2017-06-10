@@ -209,6 +209,22 @@ declare namespace MajesticWaffle {
       hide(): WinJS.IPromise<any>;
     }
 
+    class FilePicker {
+      private _element;
+      private _fileInputElement;
+      private _browseButtonElement;
+      private _fileDropElement;
+      private _files;
+      constructor(element: HTMLElement, options?: any);
+      addEventListener(name: string, listener: EventListenerOrEventListenerObject, useCapture?: boolean): void;
+      removeEventListener(name: string): void;
+      dispatchEvent(name: string): void;
+      updateBrowseButtonText(): void;
+      fileDropHandler(e: any): void;
+      fileDragHover(e:Event): void;
+      private _wireupEvents();
+    }
+
   }
 
 

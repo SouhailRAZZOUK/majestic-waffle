@@ -62,7 +62,7 @@
       let control: any;
       let cases = [
         {
-          case: ["text", "password", "email"],
+          case: ["text", "password", "email", "file"],
           callback: (): void => {
             element = document.createElement("input");
             WinJS.Utilities.addClass(element, "win-textbox");
@@ -102,6 +102,14 @@
             if (this._isConfirm) return; // Can not be confirmed
             element = document.createElement("div");
             control = new WinJS.UI.TimePicker(element, self._dataOptions);
+          }
+        },
+        {
+          case: "MajesticWaffle.UI.FilePicker",
+          callback: (): void => {
+            if (this._isConfirm) return; // Can not be confirmed
+            element = document.createElement("div");
+            control = new MajesticWaffle.UI.FilePicker(element, self._dataOptions);
           }
         }
       ];

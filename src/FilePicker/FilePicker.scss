@@ -1,19 +1,23 @@
-// .mw-file-uploader {
-//   display: flex;
-//   .mw-filepath{
-//     flex: 1 1 0%;
-//   }
-//   .mw-browsebutton{
-//     flex: 0 0 auto;
-//   }
-// }
+@import "../includes/styles/settings";
 
 .mw-filepicker {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 1rem;
-  border: 2px dashed rgba(255,255,255,.2);
   text-align: center;
   margin: 8px 0;
+
+  p {
+    @media #{$small-devices-and-up} {
+      display: none;
+    }
+  }
+
+  @media #{$large-devices-and-up} {
+    border: 2px dashed rgba(255,255,255,.2);
+    p {
+      display: block;
+    }
+  }
 }
 
 .mw-filepicker.hover {

@@ -37,17 +37,17 @@
     }
 
     public fileDragHover(e: Event): void {
-      e.stopPropagation();
+      // e.stopPropagation();
       e.preventDefault();
       (e.type === "dragover") ? this._fileDropElement.classList.add("hover") : this._fileDropElement.classList.remove("hover");
     }
 
     public fileDropHandler(e: any): void {
-      e.stopPropagation();
+      // e.stopPropagation();
       e.preventDefault();
       this.fileDragHover(e);
       this._files = e.dataTransfer.files;
-      this.dispatchEvent("onchange");
+      this.dispatchEvent("change");
     }
 
     public addEventListener(name: string, listener: EventListenerOrEventListenerObject, useCapture?: boolean): void {
@@ -64,7 +64,7 @@
 
     private _wireUpEvents(): void {
       let self = this;
-      this.addEventListener("onchange", self.updateBrowseButtonText.bind(this));
+      this.addEventListener("change", self.updateBrowseButtonText.bind(this));
 
       this._fileDropElement.addEventListener("dragover", this.fileDragHover.bind(this), false);
       this._fileDropElement.addEventListener("dragleave", this.fileDragHover.bind(this), false);
@@ -75,7 +75,7 @@
 
       this._fileInputElement.addEventListener("change", () => {
         self._files = self._fileInputElement.files;
-        self.dispatchEvent("onchange");
+        self.dispatchEvent("change");
       });
 
     }

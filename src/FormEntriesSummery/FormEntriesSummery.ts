@@ -15,7 +15,7 @@
       this._callbacks = options.callbacks || [];
 
       WinJS.UI.Fragments.render(MajesticWaffle.UI.controlsPath + "/FormEntriesSummery/FormEntriesSummery.html", this._element).done(function () {
-        self._summeryElement = <HTMLElement>self._element.querySelector("#summery-repeater");
+        self._summeryElement = <HTMLElement>self._element.querySelector("#mw-summery-repeater");
         WinJS.UI.process(self._summeryElement).then(function () {
           self._repeater = self._summeryElement.winControl;
         }).done(function () {

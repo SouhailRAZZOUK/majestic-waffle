@@ -61,7 +61,7 @@
     let errors = new Array();
     for (let entry of entries) {
       let validation = [];
-      validation = entry.validator.validateInput();
+      validation = (entry.validator) ? entry.validator.validateInput() : undefined;
       errors.push(validation);
     }
     return errors;

@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
   interface IStepsAssistantOptions extends Object {
     onready: Function;
@@ -67,9 +67,8 @@
 
       this._disposed = true;
 
-      let step: any;
-      for (step in this._steps) {
-        step.winControl.dispose();
+      for (let step of this._steps) {
+        step.dispose();
       }
 
       this._steps = null;
@@ -194,20 +193,18 @@
       let self = this;
       for (let command of this._finalCommands) command.setAttribute("disabled", "true");
       this._progressElement.winControl.show();
-      const complete = () => {
+
+      const enableCommands = () => {
         for (let command of self._finalCommands) command.removeAttribute("disabled");
         self._progressElement.winControl.hide();
       };
-      const error = () => {
-        for (let command of self._finalCommands) command.removeAttribute("disabled");
-        self._progressElement.winControl.hide();
-      };
-      let submitPromise = function (complete: Function, error: Function, progress: Function) {
-        self.onsubmit();
-      };
+
       return new WinJS.Promise((complete, error) => {
         self.onsubmit();
-      });
+        if (complete) {
+          complete();
+        }
+      }, enableCommands);
     }
 
   }

@@ -1,0 +1,34 @@
+doctype html
+  
+html
+  head
+    title
+    link(rel="stylesheet", href="http://localhost:4000/assets/components/winjs/css/ui-dark.css")
+
+  body.win-type-body
+  
+    #main(style="height: 100%;")
+      #dumb-control(data-win-control="MajesticWaffle.UI.StepsAssistant", data-win-options="{}")
+        
+        - var dummyText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum quo soluta reprehenderit, dolorem rem magni eaque beatae in, recusandae tempora iusto molestiae maxime dolore ut illum non omnis velit aliquid."
+        - var steps = [{title: "First"}, {title: "Second"}, {title: "Third"}, {title: "Final"}];
+
+        - for (var step of steps)
+          div.step(class="#{step.title}")
+            h1.win-h1 #{step.title}
+            p #{dummyText}
+          
+
+    //- WinJS Files
+    script(src="http://localhost:4000/assets/components/winjs/js/base.js")
+    script(src="http://localhost:4000/assets/components/winjs/js/ui.js")
+    
+    //- MajesticWaffle component test subject file
+    script(src="/FlyingDots/FlyingDots.js")
+    script(src="/StepsAssistant/modules/Step.js")
+    script(src="/StepsAssistant/StepsAssistant.js")
+    
+    script.
+      MajesticWaffle.UI.controlsPath = "";
+      WinJS.UI.processAll();
+  

@@ -1,13 +1,11 @@
 var gulp        = require('gulp'),
     gutil       = require('gulp-util'),
     sass        = require('gulp-sass'),
-    jade        = require('gulp-jade'),
+    pug         = require('gulp-pug'),
+    imagemin    = require('gulp-imagemin'),
     typescript  = require('gulp-typescript'),
     tslint      = require('gulp-tslint')
-    eslint      = require('gulp-eslint'),
     tsl         = require("tslint"),
-    livereload  = require('gulp-livereload'),
-    imagemin    = require('gulp-imagemin'),
     del         = require('del'),
     merge       = require('merge2');
 
@@ -39,15 +37,9 @@ gulp.task('sass', function() {
     .pipe( gulp.dest('dist/') );
 });
 
-gulp.task('js', function() {
-  return gulp.src('src/**/*.js')
-    .pipe( eslint())
-    .pipe( gulp.dest('dist/'));
-});
-
-gulp.task('jade', function() {
-return gulp.src(['src/**/*.jade', '!src/includes/**/*',])
-    .pipe( jade({ pretty: true }))
+gulp.task('pug', function() {
+return gulp.src(['src/**/*.pug', '!src/includes/**/*',])
+    .pipe( pug({ pretty: true }))
     .pipe( gulp.dest('dist/'));
 });
 
@@ -70,18 +62,16 @@ gulp.task('clean', function () {
 
 gulp.task('watch', function () {
   
-  gulp.watch('src/**/*.jade',['jade']);
+  gulp.watch('src/**/*.pug',['pug']);
 
   gulp.watch(['src/**/*gif','src/**/*.jpg','src/**/*.png','src/**/*.ico'],['images']);
 
   gulp.watch('src/**/*.scss',['sass']);
 
-  gulp.watch('src/**/*.js',['js']);
-
   gulp.watch('src/**/*.ts',['ts', 'tslint']);
 
 });
 
-gulp.task('default', ['jade','sass', 'tslint','ts', 'js','images', 'watch']);
+gulp.task('default', ['pug','sass', 'tslint','ts','images', 'watch']);
 
-gulp.task('build', ['jade','sass', 'tslint','ts', 'js','images']);
+gulp.task('build', ['pug','sass', 'tslint','ts','images']);

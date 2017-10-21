@@ -1,37 +1,35 @@
 {
   "name": "majestic-waffle",
   "version": "1.0.0",
-  "description": "A set of controls made for WinJS applications",
+  "description": "A set of UI Controls and Utilities made for WinJS applications",
   "main": "index.js",
   "dependencies": {
     "@types/winjs": "^4.4.0"
   },
   "devDependencies": {
-    "del": "^2.2.0",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-debug": "^2.1.2",
-    "gulp-eslint": "^1.1.1",
-    "gulp-imagemin": "^2.4.0",
-    "gulp-jade": "^1.1.0",
-    "gulp-pug": "^3.2.0",
-    "gulp-sass": "^2.1.1",
-    "gulp-tslint": "^7.0.1",
-    "gulp-typescript": "^3.1.4",
-    "gulp-util": "^3.0.7",
-    "merge2": "^1.0.3",
-    "tslint": "^4.3.1",
-    "typescript": "^2.1.5"
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-tslint": "^8.1.2",
+    "gulp-typescript": "^3.2.2",
+    "gulp-util": "^3.0.8",
+    "merge2": "^1.2.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.5.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": {
-    "name": "Souhail RAZZOUK",
-    "email": "souhail.razzouk@hotmail.com"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SouhailRAZZOUK/majestic-waffle.git"
   },
-  "contributors": [
-    
-  ],
-  "license": "ISC"
+  "author": "Souhail RAZZOUK <souhail.razzouk@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SouhailRAZZOUK/majestic-waffle/issues"
+  },
+  "homepage": "https://github.com/SouhailRAZZOUK/majestic-waffle#readme"
 }

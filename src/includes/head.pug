@@ -1,9 +1,12 @@
-title #{title} [#{mode} Mode] 
-meta(charset="utf-8")
-meta(name="viewport", content="width=device-width, initial-scale=1.0,\
-maximum-scale=1.0, user-scalable=no")
-link(rel="icon", href="favicon.ico")
-link(rel="stylesheet", href="/assets/components/winjs/css/ui-dark.css")
-link(rel="stylesheet", href="/assets/components/outdated-browser/outdatedbrowser/outdatedbrowser.css")
-link(rel="stylesheet", type="text/css", href="/assets/styles/app.css")
-style
+mixin head(componentName, modules)
+  
+  head
+  
+    title
+
+    link(rel="stylesheet", href= componentName + ".css")
+
+    - for(var mod of modules)
+      script(src="modules/" + mod + ".js")
+      
+    script(src= componentName + ".js")

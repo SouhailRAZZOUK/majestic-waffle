@@ -2,7 +2,7 @@ doctype html
   
 html
   head
-    title
+    title Test ground of the MajesticWaffle UI contorls
     link(rel="stylesheet", href="http://localhost:4000/assets/components/winjs/css/ui-dark.css")
 
   body.win-type-body
@@ -23,12 +23,16 @@ html
     script(src="http://localhost:4000/assets/components/winjs/js/base.js")
     script(src="http://localhost:4000/assets/components/winjs/js/ui.js")
     
-    //- MajesticWaffle component test subject file
+    //- MajesticWaffle component test subject file(s)
     script(src="/FlyingDots/FlyingDots.js")
     script(src="/StepsAssistant/modules/Step.js")
     script(src="/StepsAssistant/StepsAssistant.js")
     
+    //- Startup script
     script.
       MajesticWaffle.UI.controlsPath = "";
-      WinJS.UI.processAll();
+      let dumbControl = document.getElementById("dumb-control");
+      WinJS.UI.processAll().done(() => {
+        dumbControl.winControl.oncancel = () => dummyControl.winControl.goToStep(0);
+      });
   

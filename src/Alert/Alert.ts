@@ -1,4 +1,4 @@
-(function (){
+(function () {
 
   interface IAlertOptions extends Object {
     title: string;

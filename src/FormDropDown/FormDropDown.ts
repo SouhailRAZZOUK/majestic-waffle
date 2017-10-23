@@ -1,4 +1,4 @@
-(function(){
+(function () {
 
   class FormDropDown {
     private _element: HTMLElement;

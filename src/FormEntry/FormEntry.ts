@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
   class FormEntry {
     private _element: HTMLElement;
@@ -124,6 +124,10 @@
         self._value = self._input.value;
         self.dispatchEvent("changed");
       };
+      this._input.element.addEventListener("keydown", () => {
+        self._value = self._input.value;
+        self.dispatchEvent("changed");
+      });
 
       if (this._confirm) {
         this._confirm.onchange = function () {

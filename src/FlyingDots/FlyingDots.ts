@@ -1,4 +1,4 @@
-(function (){
+(function () {
 
   class FlyingDots {
     private _element: HTMLElement;

@@ -20,14 +20,13 @@ Please make sure you called them before calling any control that depends on any 
 
 | Provider | Command |
 | -------- | ------- |
-<!--| npm | `$ npm i -S majestic-waffle` |-->
 | bower | `$ bower install majestic-waffle` |
 | yarn | `$ yarn add majestic-waffle` |
 | clone/download via Git | `$ git clone https://github.com/SouhailRazzouk/majestic-waffle.git` |
 
 ## Usage
 
-Inorder to include any needed control in your app, you have to follow these steps after calling WinJS in your app.
+In order to include any needed control in your app, you have to follow these steps after calling WinJS in your app.
 
 1. Add a script tag where the `src` attribut points to the script of the desired control:
 
@@ -48,7 +47,7 @@ MajesticWaffle.UI.controlsPath = "/path/to/majestic-waffle";
 
 // Example:
 
-/*This is the default value, so your browser will look for your controls in bower_components folder for majestic-waffle*/
+/* This is the default value, so your browser will look for your controls in bower_components folder for majestic-waffle */
 MajesticWaffle.UI.controlsPath = "/bower_components/majestic-waffle"; 
 
 ```

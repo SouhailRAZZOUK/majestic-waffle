@@ -3,36 +3,110 @@ doctype html
 html
   head
     title Test ground of the MajesticWaffle UI contorls
-    link(rel="stylesheet", href="/bower_components/winjs/css/ui-dark.css")
+    link(rel="stylesheet", href="/bower_components/winjs/css/ui-light.css")
+    style.
+
+      .content,
+      #main {
+        height: 100%;
+      }
+
+      #main .win-splitviewpanetoggle {
+        /*float: left;
+        display: inline-flex;*/
+      }
+
+      /* SplitView pane content style*/
+      #main .header {
+        white-space: nowrap;
+      }
+
+      #main .title {
+        font-size: 25px;
+        left: 50px;
+        margin-top: 6px;
+        vertical-align: middle;
+        display: inline-block;
+      }
+
+      #main .nav-commands {
+        margin-top: 20px;
+      }
+
+      .win-splitviewcommand-button {
+        background-color: transparent;
+      }
+
+      #main .win-splitview-pane-closed .win-splitviewcommand-label {
+        /*  Make sure pane content doesn't scroll if 
+        SplitViewCommand label receives focus while pane is closed.
+        */
+        visibility: hidden;
+      }
+
+      /*SplitView content style*/
+      #main .win-splitview-content {
+        /* background-color: rgb(112,112,112);*/
+      }
+
+      #main .contenttext {
+        margin-left: 20px;
+        margin-top: 6px;
+      }
+
+      #main .win-splitviewpanetoggle {
+        cursor: pointer;
+        /*display: -webkit-inline-box;
+        margin-left: 10px;
+        display: -ms-inline-flexbox;
+        display: inline-flex;*/
+        /* padding: 15px;
+        // -webkit-transition: margin-left .2s cubic-bezier(.165,.84,.44,1);
+        // transition: margin-left .2s cubic-bezier(.165,.84,.44,1);*/
+      }
+
+      #main .win-splitviewpanetoggle::after{
+        font-size: 16px;
+        font-weight: bold;
+      }
 
   body.win-type-body
   
     #main(style="height: 100%;")
-      #dumb-control(data-win-control="MajesticWaffle.UI.StepsAssistant", data-win-options="{}")
-        
-        - var dummyText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum quo soluta reprehenderit, dolorem rem magni eaque beatae in, recusandae tempora iusto molestiae maxime dolore ut illum non omnis velit aliquid."
-        - var steps = [{title: "First"}, {title: "Second"}, {title: "Third"}, {title: "Final"}];
 
-        - for (var step of steps)
-          div.step(class="#{step.title}")
-            h1.win-h1 #{step.title}
-            p #{dummyText}
-          
+      .splitView(data-win-control='WinJS.UI.SplitView')
+        //- Pane area
+        div
+          .header
+            #dumb-control(data-win-control="MajesticWaffle.UI.SplitViewPaneHeader", data-win-options="{title: 'Majestic Waffle', icon: '/icon.svg', homeUrl: '/test.html'}")
+              
+            button.win-splitviewpanetoggle(data-win-control='WinJS.UI.SplitViewPaneToggle', data-win-options="{ splitView: select('.splitView') }")
 
+          .nav-commands
+            #home(data-win-control='WinJS.UI.SplitViewCommand', data-win-options="{ label: 'Home', icon: 'home'}")
+            #favorite(data-win-control='WinJS.UI.SplitViewCommand', data-win-options="{ label: 'Favorite', icon: 'favorite'}")
+            #settings(data-win-control='WinJS.UI.SplitViewCommand', data-win-options="{ label: 'Settings', icon: 'settings'}")
+        //- Content area
+        .contenttext
+          h2.win-h2 SplitView Content area
+
+		
+		
     //- WinJS Files
     script(src="/bower_components/winjs/js/base.js")
     script(src="/bower_components/winjs/js/ui.js")
     
     //- MajesticWaffle component test subject file(s)
-    script(src="/FlyingDots/FlyingDots.js")
-    script(src="/StepsAssistant/modules/Step.js")
-    script(src="/StepsAssistant/StepsAssistant.js")
+    script(src="/SplitViewPaneHeader/SplitViewPaneHeader.js")
+
+    //- MajesticWaffle scripts
+    script(src="/Navigation.js")    
     
     //- Startup script
     script.
       MajesticWaffle.UI.controlsPath = "";
       let dumbControl = document.getElementById("dumb-control");
       WinJS.UI.processAll().done(() => {
-        dumbControl.winControl.oncancel = () => dummyControl.winControl.goToStep(0);
+      var splitView = document.querySelector(".splitView").winControl;
+      new WinJS.UI._WinKeyboard(splitView.paneElement); // Temporary workaround: Draw keyboard focus visuals on NavBarCommands
       });
-  

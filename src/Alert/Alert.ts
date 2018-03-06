@@ -25,6 +25,12 @@
       let typePrefix: string = "mw-alert mw-alert-";
       let stack: HTMLElement = document.getElementById("mw-alerts-stack");
 
+      if (!stack) {
+        stack = document.createElement("div");
+        stack.id = "mw-alerts-stack";
+        document.body.appendChild(stack);
+      }
+
       WinJS.Utilities.addClass(textElement, "text");
 
       this._element = element;

@@ -1,18 +1,18 @@
-.mw-alerts-stack{
+#mw-alerts-stack {
   width: 100%;
   position: absolute;
   z-index: 20;
   background-color: transparent;
-  
+  top: 0;
+  left: 0;
   .mw-alert {
     margin: 0 0 1px 0;
     padding-right: 10px;
     border-top: none;
     border-right: none;
     border-left: none;
-
     p {
-      padding-top: 4px; 
+      padding-top: 4px;
     }
   }
 }

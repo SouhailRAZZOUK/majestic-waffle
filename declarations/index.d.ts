@@ -11,10 +11,15 @@ declare namespace MajesticWaffle {
   namespace UI {
 
     /** 
-     * Contains the folder where controls are existing.
+     * Contains the path where controls are existing.
      */
 
     let controlsPath: string;
+
+    enum SidePanelSides {
+      right = "right",
+      left = "left"
+    }
 
     class Alert {
       private _element;
@@ -221,8 +226,50 @@ declare namespace MajesticWaffle {
       dispatchEvent(name: string): void;
       updateBrowseButtonText(): void;
       fileDropHandler(e: any): void;
-      fileDragHover(e:Event): void;
+      fileDragHover(e: Event): void;
       private _wireupEvents();
+    }
+
+    class SplitViewPaneHeaderIconButton {
+      element: HTMLElement;
+      private _icon;
+      private _iconContainer;
+      private _backButton;
+      private _url;
+      constructor(element: HTMLElement, options: any);
+      private _generateElements();
+      showIcon(): WinJS.IPromise<any>;
+      showBackButton(): WinJS.IPromise<any>;
+      icon: any;
+      url: any;
+      private _wireUpEvents();
+    }
+
+    class SplitViewPaneHeader {
+      readonly element: HTMLElement;
+      private _icon;
+      private _title;
+      private _logoArea;
+      constructor(element: HTMLElement, options?: any);
+      title: string;
+    }
+
+    class SidePanel {
+      primaryAction: Function;
+      secondaryAction: Function;
+      private _element;
+      private _side;
+      private _dismissable;
+      private _commands;
+      private _commandsEl;
+      private _contentEl;
+      private _persistant;
+      constructor(element: HTMLElement, options: any);
+      side: SidePanelSides;
+      show(): void;
+      hide(): void;
+      private _generateCommands(options);
+      private _wireUpEvents(options);
     }
 
   }

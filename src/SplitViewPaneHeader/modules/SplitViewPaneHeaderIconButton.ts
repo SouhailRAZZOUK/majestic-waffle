@@ -53,7 +53,7 @@ namespace MajesticWaffle.UI {
         this._iconContainer.textContent = icon;
       } else if (/url\S[\/\w+]\S/.test(value)) {
         this._iconContainer.style.backgroundImage = value;
-      } else {
+      } else if (value) {
         WinJS.UI.Fragments.render(value, this._iconContainer);
       }
     }

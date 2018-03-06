@@ -1,9 +1,10 @@
+declare enum SidePanelSides {
+  right = "right",
+  left = "left"
+}
 
 namespace MajesticWaffle.UI {
-  enum SidePanelSides {
-    right = "right",
-    left = "left"
-  }
+
   let WinJSUI = <any>WinJS.UI;
 
   export class SidePanel {
